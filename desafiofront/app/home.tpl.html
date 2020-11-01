@@ -7,9 +7,12 @@
     </p>
 
     <h2 class="mt-5">Nosso Catálogo</h2>
+    <input type="text" ng-model="criteriodeBusca" placeholder="Pesquisar">
     <hr class="mt-1 bg-primary">
+
     <div class="row">
-        <div class="col-4" ng-repeat="carro in vm.listaCarros track by $index">
+
+        <div class="col-4" ng-repeat="carro in vm.listaCarros | filter:{modelo:criteriodeBusca} track by $index">
             <div class="card mb-4" style="width: 18rem;">
                 <!-- <img class="card-img-top" src="..." alt="Card image cap"> -->
                 <div class="card-body">
@@ -27,5 +30,8 @@
                 </div>
             </div>
         </div>
+
+      
+
     </div>
 </div>

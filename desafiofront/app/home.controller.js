@@ -2,7 +2,14 @@
     "use strict";
 
     angular.module('autoLocadoraApp')
-        .controller('HomeController', homeController);
+        .controller('HomeController', homeController)
+        .filter('startFrom', function(){
+            //data = vm.listarCarros;
+            return function(data, start){
+                return data.slice(start);
+            }
+        })
+;
 
     homeController.$inject = ['helperFactory', 'autoLocadoraService'];
 
@@ -29,6 +36,14 @@
                     helper.rootScopeApply();
                 });
         }
+
+        //function startFrom(){
+         //   return function(data, start){
+          //      return data.slice(start);
+           // }
+       // }
+
+
 
     }
 
